@@ -1,7 +1,6 @@
 const { withModuleFederation } = require("@module-federation/nextjs-mf")
 
 module.exports = {
-  future: { webpack5: true },
   webpack: (config, options) => {
     const mfConf = {
       name: "host",
