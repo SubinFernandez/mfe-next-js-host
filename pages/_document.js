@@ -10,10 +10,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <script src={`${process.env.REMOTE_APP_URL__ABOUT}?rnd=${uuid().replace(/-/gi, "")}`} />
-        <script src={`${process.env.REMOTE_APP_URL__CONTACT}?rnd=${uuid().replace(/-/gi, "")}`} />
         <Head />
         <body>
+          {/* eslint-disable @next/next/no-sync-scripts */}
+          <script src={`${process.env.REMOTE_APP_URL__CONTACT}?rnd=${uuid().replace(/-/gi, "")}`} />
+          <script src={`${process.env.REMOTE_APP_URL__ABOUT}?rnd=${uuid().replace(/-/gi, "")}`} />
+          {/* eslint-enable @next/next/no-sync-scripts */}
           <Main />
           <NextScript />
         </body>
